@@ -1,0 +1,173 @@
+/* Reset de margens e padding para garantir uma base consistente em diferentes navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Definindo a fonte e o estilo básico da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7; /* Cor de fundo neutra */
+    color: #333; /* Cor do texto para contraste com o fundo */
+    line-height: 1.6;
+    transition: background-color 0.5s ease; /* Transição suave ao alterar o fundo */
+}
+  
+header {
+    background-color: #333; /* Cor de fundo escura para o cabeçalho */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+    transition: background-color 0.3s ease-in-out;
+}
+  
+header .logo img {
+    width: 180px; /* Tamanho do logo */
+    height: auto;
+    border-radius: 50%; /* Logo circular */
+    border: 2px solid #fff; /* Borda branca ao redor do logo */
+    transition: transform 0.3s ease; /* Efeito de transição ao passar o mouse */
+}
+  
+header h1 {
+    font-size: 2.5em;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Animação suave para o título */
+}
+  
+/* Animação de fade-in para os elementos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+  
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+  
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease; /* Efeito de transição nos links */
+}
+  
+nav ul li a:hover {
+    color: #ffb900; /* Cor de destaque ao passar o mouse */
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+  
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1100px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Bordas arredondadas para um visual mais suave */
+    opacity: 0;
+    animation: slideUp 1s forwards; /* Animação para a entrada da seção */
+}
+  
+/* Animação de slide para as seções */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s; /* Delay na animação para o título */
+}
+  
+.bio, .obras, .curiosidades {
+    margin-bottom: 40px;
+}
+  
+/* Estilo para os contêineres das obras */
+.obra {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px; /* Limite para evitar que as imagens fiquem grandes demais */
+    margin: 30px;
+    text-align: center; /* Centraliza o conteúdo da obra */
+}
+  
+/* Ajustes nas imagens das obras para manter a proporção */
+.obra img {
+    width: 100%; /* Ajusta a imagem para ocupar 100% da largura do contêiner */
+    height: auto; /* Garante que a imagem não distorça */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Efeito de zoom ao passar o mouse */
+}
+  
+/* Estilo para o título das obras */
+.obra h3 {
+    font-size: 1.6em;
+    color: #fff; /* Cor branca para contraste */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar destaque ao título */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o título */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+  
+/* Efeito de zoom nas imagens das obras ao passar o mouse */
+.obra:hover img {
+    transform: scale(1.05);
+}
+  
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.2s; /* Animação para o footer com delay */
+}
+  
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
+  
+/* Ajustes para telas menores (responsividade) */
+@media (max-width: 768px) {
+    .obra {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+  
+    .obra img {
+        margin-bottom: 20px;
+    }
+}
